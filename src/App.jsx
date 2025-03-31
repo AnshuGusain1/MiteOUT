@@ -5,7 +5,7 @@ import { LoadingScreen } from "./assets/LoadingScreen";
 import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
 import { Home } from "./components/sections/Home";
-import { About } from "./components/sections/About";
+import { Prototypes } from "./components/sections/Prototypes";
 import { Projects } from "./components/sections/Projects";
 import { Awards } from "./components/sections/Awards";
 import "./index.css";
@@ -27,7 +27,7 @@ function App() {
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
+          <Route path="/Prototypes" element={<Prototypes />} />
           <Route path="/Awards" element={<Awards />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

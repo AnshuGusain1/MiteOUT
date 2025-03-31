@@ -38,10 +38,10 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                             Awards
                         </Link>
                         <Link 
-                            to="/About" 
+                            to="/Prototypes" 
                             className="text-gray-300 hover:text-[rgb(247, 235, 232)] transition-colors"
                         > 
-                            About
+                            Prototypes
                         </Link>
                         <Link 
                             to="/Contact" 
