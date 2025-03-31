@@ -1,46 +1,54 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import DartmouthImage from "../../assets/Dartmouth1.png";
+import RPIImage from "../../assets/RPIImage.jpg";
+import GrantAward from "../../assets/GrantAward.jpg";
+import SienaImage from "../../assets/Siena1.png";
+import EdisonImage from "../../assets/EdisonImage.jpeg";
 
 const Awards = () => {
+  const [featuredAward, setFeaturedAward] = useState(null);
+
+  useEffect(() => {
+    // Randomly select a featured award when component mounts
+    const randomIndex = Math.floor(Math.random() * awards.length);
+    setFeaturedAward(awards[randomIndex]);
+  }, []); // Empty dependency array means this runs once on mount
+
   const awards = [
     {
       id: 1,
       title: "Dartmouth College Social Blueprint Challenge",
       year: "February 2025 - 1st place",
-      organization: "National Pest Management Association",
-      description: "Recognized for outstanding service and innovative approaches to pest management solutions.",
-      image: "/assets/award-excellence.jpg",
+      description: "....",
+      image: DartmouthImage,
     },
     {
       id: 2,
-      title: "Environmental Stewardship Award",
-      year: "2023",
-      organization: "Green Business Alliance",
-      description: "Awarded for commitment to eco-friendly pest control methods and sustainable business practices.",
-      image: "/assets/award-environmental.jpg",
+      title: "RPI Problem Pitch Competition",
+      year: "December 2024 - 3rd place",
+      description: "...",
+      image: RPIImage,
     },
     {
       id: 3,
-      title: "Customer Satisfaction Gold Star",
-      year: "2023",
-      organization: "Consumer Choice Awards",
-      description: "Highest rated pest control service based on customer reviews and satisfaction surveys.",
-      image: "/assets/award-customer.jpg",
+      title: "Dartmouth College Founder Grant",
+      year: "November 2024 - Grant Award",
+      description: "...",
+      image: GrantAward,
     },
     {
       id: 4,
-      title: "Industry Innovation Award",
-      year: "2022",
-      organization: "Pest Control Technology Magazine",
-      description: "Recognized for developing cutting-edge methods in mite prevention and removal.",
-      image: "/assets/award-innovation.jpg",
+      title: "Siena College Business Plan Competition",
+      year: "June 2024-1st place",
+      description: "...",
+      image: SienaImage,
     },
     {
       id: 5,
-      title: "Community Impact Recognition",
-      year: "2021",
-      organization: "City Chamber of Commerce",
-      description: "Honored for contributions to community health and safety through educational programs.",
-      image: "/assets/award-community.jpg",
+      title: "Thomas Edison Pitch Contest",
+      year: "Description",
+      description: "...",
+      image: EdisonImage,
     },
   ];
 
@@ -64,7 +72,10 @@ const Awards = () => {
                 <img 
                   src={award.image} 
                   alt={award.title} 
-                  className="w-full h-full object-cover" 
+                  className="w-full h-full object-cover"
+                  style={{
+                    objectPosition: award.id === 2 ? "0px -30px" : award.id === 5 ? "0px -10px" : "center"
+                  }} 
                   onError={(e) => {
                     e.target.src = "https://via.placeholder.com/400x200?text=Award+Image";
                   }}
@@ -82,14 +93,14 @@ const Awards = () => {
           ))}
         </div>
 
-        {/* Feature award (if there's one you want to highlight) */}
-        {awards.length >= 5 && (
+        {/* Feature award */}
+        {featuredAward && (
           <div className="mt-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl overflow-hidden shadow-xl">
             <div className="md:flex">
               <div className="md:w-1/2">
                 <img 
-                  src={awards[4].image} 
-                  alt={awards[4].title} 
+                  src={featuredAward.image} 
+                  alt={featuredAward.title} 
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.target.src = "https://via.placeholder.com/600x400?text=Featured+Award";
@@ -100,12 +111,12 @@ const Awards = () => {
                 <span className="inline-block px-3 py-1 text-sm font-semibold text-white bg-black bg-opacity-20 rounded-full mb-4">
                   Featured Achievement
                 </span>
-                <h3 className="text-2xl font-bold text-white mb-4">{awards[4].title}</h3>
-                <p className="text-white mb-6">{awards[4].description}</p>
+                <h3 className="text-2xl font-bold text-white mb-4">{featuredAward.title}</h3>
+                <p className="text-white mb-6">{featuredAward.description}</p>
                 <div className="flex items-center">
-                  <span className="text-white font-medium">{awards[4].organization}</span>
+                  <span className="text-white font-medium">{featuredAward.organization}</span>
                   <span className="mx-2 text-white">•</span>
-                  <span className="text-white">{awards[4].year}</span>
+                  <span className="text-white">{featuredAward.year}</span>
                 </div>
               </div>
             </div>
