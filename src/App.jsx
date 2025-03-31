@@ -10,6 +10,7 @@ import { Projects } from "./components/sections/Projects";
 import { Awards } from "./components/sections/Awards";
 import "./index.css";
 import { Contact } from "./components/sections/Contact";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
