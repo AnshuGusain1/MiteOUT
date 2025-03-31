@@ -10,7 +10,7 @@ export const Home = () => {
         id="home"
         className="min-h-screen flex items-center justify-center relative w-full"
         style={{ 
-          backgroundImage: "url('/src/assets/HomeBackground.png')", 
+          backgroundImage: "url('./src/assets/HomeBackground.png')", 
           backgroundSize: "cover", 
           backgroundPosition: "center",
           width: "100vw", // Use viewport width
