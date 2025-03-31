@@ -27,25 +27,25 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                     <div className="hidden md:flex items-center space-x-8">
                         <Link 
                             to="/" 
-                            className="text-gray-300 hover:text-[rgb(247, 235, 232)] transition-colors"
+                            className="text-gray-300 hover:text-[rgb(0, 0, 0)] transition-colors"
                         > 
                             Home
                         </Link>
                         <Link 
                             to="/Awards" 
-                            className="text-gray-300 hover:text-[rgb(247, 235, 232)] transition-colors"
+                            className="text-gray-300 hover:text-[rgb(0, 0, 0)] transition-colors"
                         > 
                             Awards
                         </Link>
                         <Link 
                             to="/Prototypes" 
-                            className="text-gray-300 hover:text-[rgb(247, 235, 232)] transition-colors"
+                            className="text-gray-300 hover:text-[rgb(0, 0, 0)] transition-colors"
                         > 
                             Prototypes
                         </Link>
                         <Link 
                             to="/Contact" 
-                            className="text-gray-300 hover:text-[rgb(247, 235, 232)] transition-colors"
+                            className="text-gray-300 hover:text-[rgb(0, 0, 0)] transition-colors"
                         > 
                             Contact
                         </Link>
