@@ -64,6 +64,57 @@ export const Home = () => {
         <Initiative />
         <AboutHome />
       </section>
+
+      {/* Social Links Section */}
+      <section className="py-8 relative" style={{ 
+        width: "100vw",
+        marginLeft: "calc(-50vw + 50%)",
+        backgroundColor: "#f2b03bff"  // Light peach/orange background
+      }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center space-y-4">
+            <h2 className="text-2xl font-bold text-gray-900">Connect With Us</h2>
+            <div className="flex items-center space-x-6">
+              {/* LinkedIn Link */}
+              <a
+                href="https://www.linkedin.com/company/miteout"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors duration-200"
+              >
+                <svg
+                  className="w-8 h-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+
+              {/* Google Form Link */}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdqIWtBXgvfK5kVzCWQZ9jxMkOo34t0J40GGhUf6xwqIiAlrg/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-gray-700 hover:text-red-600 transition-colors duration-200"
+              >
+                <svg
+                  className="w-8 h-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                </svg>
+                <span>Google Form</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

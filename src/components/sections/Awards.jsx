@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import DartmouthImage from "../../assets/Dartmouth1.png";
 import RPIImage from "../../assets/RPIImage.jpg";
 import GrantAward from "../../assets/GrantAward.jpg";
@@ -6,14 +6,6 @@ import SienaImage from "../../assets/Siena1.png";
 import EdisonImage from "../../assets/EdisonImage.jpeg";
 
 const Awards = () => {
-  const [featuredAward, setFeaturedAward] = useState(null);
-
-  useEffect(() => {
-    // Randomly select a featured award when component mounts
-    const randomIndex = Math.floor(Math.random() * awards.length);
-    setFeaturedAward(awards[randomIndex]);
-  }, []); // Empty dependency array means this runs once on mount
-
   const awards = [
     {
       id: 1,
@@ -93,14 +85,14 @@ const Awards = () => {
           ))}
         </div>
 
-        {/* Feature award */}
-        {featuredAward && (
+        {/* Feature award (if there's one you want to highlight) */}
+        {awards.length >= 5 && (
           <div className="mt-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl overflow-hidden shadow-xl">
             <div className="md:flex">
               <div className="md:w-1/2">
                 <img 
-                  src={featuredAward.image} 
-                  alt={featuredAward.title} 
+                  src={awards[4].image} 
+                  alt={awards[4].title} 
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.target.src = "https://via.placeholder.com/600x400?text=Featured+Award";
@@ -111,12 +103,12 @@ const Awards = () => {
                 <span className="inline-block px-3 py-1 text-sm font-semibold text-white bg-black bg-opacity-20 rounded-full mb-4">
                   Featured Achievement
                 </span>
-                <h3 className="text-2xl font-bold text-white mb-4">{featuredAward.title}</h3>
-                <p className="text-white mb-6">{featuredAward.description}</p>
+                <h3 className="text-2xl font-bold text-white mb-4">{awards[4].title}</h3>
+                <p className="text-white mb-6">{awards[4].description}</p>
                 <div className="flex items-center">
-                  <span className="text-white font-medium">{featuredAward.organization}</span>
+                  <span className="text-white font-medium">{awards[4].organization}</span>
                   <span className="mx-2 text-white">•</span>
-                  <span className="text-white">{featuredAward.year}</span>
+                  <span className="text-white">{awards[4].year}</span>
                 </div>
               </div>
             </div>

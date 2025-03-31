@@ -28,7 +28,11 @@ const AboutHome = () => {
         <p className="mb-2 text-black">Rensselaer Polytechnic Institute 2028</p>
         <p className="text-black">Mechanical Engineering</p>
       </div>
+
+      
+      
     </div>
+    
   );
 };
 
