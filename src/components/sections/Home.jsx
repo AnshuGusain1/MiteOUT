@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { RevealOnScroll } from "../RevealOnScroll";
-import Initiative from "/src/components/sections/Initiative.jsx"; // Add this import (adjust the path as needed)
+import Initiative from "./Initiative.jsx";
 import AboutHome from "./AboutHome.jsx";
+import BackgroundImage from '../../assets/HomeBackground.png'
 
 export const Home = () => {
   return (
@@ -10,7 +11,7 @@ export const Home = () => {
         id="home"
         className="min-h-screen flex items-center justify-center relative w-full"
         style={{ 
-          backgroundImage: "url('../assets/HomeBackground.png')", 
+          backgroundImage: `url(${BackgroundImage})`, 
           backgroundSize: "cover", 
           backgroundPosition: "center",
           width: "100vw", // Use viewport width
