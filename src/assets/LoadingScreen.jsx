@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export const LoadingScreen = ({ onComplete }) => {
   const [bees, setBees] = useState([]);
   const fullText = "MiteOUT";
+  const [progress, setProgress] = useState(0);
   
   // Generate random bee positions
   useEffect(() => {
@@ -49,22 +50,30 @@ export const LoadingScreen = ({ onComplete }) => {
     return () => clearInterval(moveBees);
   }, []);
 
-  // Complete after delay
+  // Progress bar animation
   useEffect(() => {
-    const timer = setTimeout(() => {
-      onComplete();
-    }, 3000); // Show loading screen for 3 seconds
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        const newProgress = prev + 5;
+        if (newProgress >= 100) {
+          clearInterval(interval);
+          onComplete();
+          return 100;
+        }
+        return newProgress;
+      });
+    }, 75); // Faster progress - completes in 1.5 seconds
     
-    return () => clearTimeout(timer);
+    return () => clearInterval(interval);
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-white text-black-100 flex flex-col items-center justify-center overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-amber-50 text-black-100 flex flex-col items-center justify-center overflow-hidden">
       <div className="relative w-full h-full">
         {bees.map(bee => (
           <div 
             key={bee.id}
-            className="absolute text-xl"
+            className="absolute text-2xl"
             style={{
               left: `${bee.x}%`,
               top: `${bee.y}%`,
@@ -72,16 +81,24 @@ export const LoadingScreen = ({ onComplete }) => {
               transition: "all 0.05s linear"
             }}
           >
+            🐝
           </div>
         ))}
       </div>
       
-      <div className="absolute mb-4 text-4xl font-mono font-bold z-10">
+      <div className="absolute mb-16 text-5xl font-mono font-bold z-10 text-amber-800">
         {fullText}
       </div>
       
-      <div className="absolute mt-32 w-[200px] h-[2px] bg-gray-800 rounded relative overflow-hidden">
-        <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
+      <div className="absolute mt-16 w-[250px] h-[8px] bg-amber-200 rounded-full relative overflow-hidden">
+        <div 
+          className="h-full bg-amber-500 rounded-full shadow-[0_0_15px_#f59e0b] transition-all duration-75 ease-linear"
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
+      
+      <div className="absolute mt-32 text-amber-700 italic">
+        Loading...
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import JonahImage from "../../assets/JonahImage.jpeg";
 
 const AboutHome = () => {
   return (
@@ -12,11 +13,11 @@ const AboutHome = () => {
       </div>
       
       {/* Middle - Photo */}
-      <div className="mx-4">
+      <div className="mx-4" style={{ width: "600px", height: "600px" }}>
         <img 
-          src="/api/placeholder/600/500" 
+          src={JonahImage}
           alt="Co-founders in formal attire with matching ties" 
-          className="rounded-md max-w-full h-auto"
+          className="rounded-md w-full h-full object-cover"
         />
       </div>
       
