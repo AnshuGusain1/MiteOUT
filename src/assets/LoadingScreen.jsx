@@ -12,8 +12,8 @@ export const LoadingScreen = ({ onComplete }) => {
       for (let i = 0; i < 10; i++) {
         newBees.push({
           id: i,
-          x: Math.random() * 80,
-          y: Math.random() * 80,
+          x: Math.random() * 90,
+          y: Math.random() * 90,
           speedX: (Math.random() - 0.5) * 4,
           speedY: (Math.random() - 0.5) * 4,
           rotation: Math.random() * 360
