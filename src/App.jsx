@@ -17,7 +17,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <Router basename='/MiteOUT'>
+    <Router basename= {process.env.VITE_BASE_PATH}>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
       <div
         className={`min-h-screen transition-opacity duration-700 ${
