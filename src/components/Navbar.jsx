@@ -8,7 +8,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
     }, [menuOpen]);
 
     return (
-        <nav className="fixed top-0 w-full left-0 z-40 bg-[rgba(40, 40, 40, 0.8)] backdrop-blur-lg shadow-md"> 
+        <nav className="fixed top-0 w-full left-0 z-50 bg-[rgba(40, 40, 40, 0.8)] backdrop-blur-lg shadow-md"> 
             <div className="max-w-5xl mx-auto px-4">
                 <div className="flex justify-between items-center h-16">
                     <Link to="/">
@@ -16,36 +16,38 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                     </Link>
 
                     {/* Mobile Menu Button */}
-                    <div 
-                        className="w-7 h-5 relative cursor-pointer z-40 md:hidden" 
+                    <button 
+                        className="w-7 h-5 relative cursor-pointer z-50 md:hidden text-white text-2xl focus:outline-none" 
                         onClick={() => setMenuOpen((prev) => !prev)}
+                        aria-label={menuOpen ? "Close menu" : "Open menu"}
+                        aria-expanded={menuOpen}
                     >
-                        &#9776;
-                    </div>
+                        {menuOpen ? "×" : "☰"}
+                    </button>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-8">
                         <Link 
                             to="/" 
-                            className="text-black hover:text-gray-600 transition-colors"
+                            className="text-white hover:text-gray-300 transition-colors"
                         > 
                             Home
                         </Link>
                         <Link 
                             to="/Awards" 
-                            className="text-black hover:text-gray-600 transition-colors"
+                            className="text-white hover:text-gray-300 transition-colors"
                         > 
                             Awards
                         </Link>
                         <Link 
                             to="/Prototypes" 
-                            className="text-black hover:text-gray-600 transition-colors"
+                            className="text-white hover:text-gray-300 transition-colors"
                         > 
                             Prototypes
                         </Link>
                         <Link 
                             to="/Contact" 
-                            className="text-black hover:text-gray-600 transition-colors"
+                            className="text-white hover:text-gray-300 transition-colors"
                         > 
                             Contact
                         </Link>
