@@ -17,7 +17,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
 
                     {/* Mobile Menu Button */}
                     <button 
-                        className="w-7 h-5 relative cursor-pointer z-50 md:hidden text-white text-2xl focus:outline-none" 
+                        className="w-7 h-5 relative cursor-pointer z-50 md:hidden text-black text-2xl focus:outline-none" 
                         onClick={() => setMenuOpen((prev) => !prev)}
                         aria-label={menuOpen ? "Close menu" : "Open menu"}
                         aria-expanded={menuOpen}
