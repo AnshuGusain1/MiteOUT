@@ -31,8 +31,8 @@ export const Contact = () => {
                   </svg>
                   <div>
                     <p className="text-black font-medium">Address</p>
-                    <p className="text-gray-700">123 Innovation Way, Tech District</p>
-                    <p className="text-gray-700">San Francisco, CA 94105</p>
+                    <p className="text-gray-700">Latham</p>
+                    <p className="text-gray-700">NY</p>
                   </div>
                 </div>
                 
@@ -42,7 +42,8 @@ export const Contact = () => {
                   </svg>
                   <div>
                     <p className="text-black font-medium">Phone</p>
-                    <p className="text-gray-700">(415) 555-0123</p>
+                    <p className="text-gray-700">(518) 210-0594 - Jonah H.</p>
+                    <p className="text-gray-700">(518) 867-7449 - Lucas B.</p>
                   </div>
                 </div>
                 
