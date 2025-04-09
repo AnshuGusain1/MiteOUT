@@ -76,6 +76,8 @@ export const Contact = () => {
                   src="https://docs.google.com/forms/d/e/1FAIpQLSdqIWtBXgvfK5kVzCWQZ9jxMkOo34t0J40GGhUf6xwqIiAlrg/viewform?embedded=true"
                   className="w-full h-full min-h-[400px] border-0 rounded"
                   title="Contact Form"
+                  loading="lazy"
+                  sandbox="allow-same-origin allow-scripts allow-forms"
                 >
                   Loading Google Form...
                 </iframe>

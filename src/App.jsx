@@ -17,13 +17,11 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <Router basename= {process.env.VITE_BASE_PATH}>
-      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
-      <div
-        className={`min-h-screen transition-opacity duration-700 ${
+    <Router basename={import.meta.env.VITE_BASE_PATH || '/MiteOUT'}>
+      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
+      <div className={`min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
-        } bg-black text-gray-100`}
-      >
+        } bg-black text-gray-100`}>
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Routes>

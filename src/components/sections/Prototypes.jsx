@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import BeehiveImage from "../../assets/Hive.png";
+import HomeBackground from "../../assets/HomeBackground.png";
 
 export const Prototypes = () => {
   const slides = [
     {
       id: 1,
       title: "The MiteWhipe",
-      image: BeehiveImage, // Replace with actual image path
+      image: BeehiveImage,
       content: "The MiteWhipe is an autonomous, solar-powered device that retrofits onto existing beehives above the hive entrance. Once fitted onto a hive, our system will give precise microdoses of miticides. Based on ambient temperature data, the MiteWhipe can dose at optimal times to eradicate varroa mites. The MiteWhipe can last unattended for a full treatment cycle and only needs to be accessed when treatments are being changed."
     },
     {
@@ -75,18 +76,17 @@ export const Prototypes = () => {
   };
 
   return (
-    <div className="w-full h-screen bg-orange-300">
-      {/* Hero Banner with Background Image */}
+    <div className="min-h-screen bg-amber-50">
       <div 
-        className="w-full h-48 bg-cover bg-center flex items-center justify-center"
-        style={{ 
-          backgroundImage: "url('/path/to/prototype-header-image.jpg')",
+        className="h-64 w-full bg-cover bg-center flex items-center justify-center"
+        style={{
+          backgroundImage: `url(${HomeBackground})`,
           backgroundSize: "cover",
           position: "relative"
         }}
       >
         <div className="absolute inset-0 bg-orange-300 bg-opacity-40"></div>
-        <h1 className="text-4xl font-bold text-black z-10">Prototypes</h1>
+        <h1 className="text-4xl font-bold text-white relative z-10">Our Prototypes</h1>
       </div>
       
       {/* Slide Content */}

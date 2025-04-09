@@ -54,18 +54,22 @@ export const LoadingScreen = ({ onComplete }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress(prev => {
-        const newProgress = prev + 5;
-        if (newProgress >= 100) {
-          clearInterval(interval);
-          onComplete();
+        if (prev >= 100) {
           return 100;
         }
-        return newProgress;
+        return prev + 5;
       });
-    }, 75); // Faster progress - completes in 1.5 seconds
+    }, 75);
     
     return () => clearInterval(interval);
-  }, [onComplete]);
+  }, []);
+
+  // Handle completion
+  useEffect(() => {
+    if (progress >= 100) {
+      onComplete();
+    }
+  }, [progress, onComplete]);
 
   return (
     <div className="fixed inset-0 z-50 bg-amber-50 text-black-100 flex flex-col items-center justify-center overflow-hidden">

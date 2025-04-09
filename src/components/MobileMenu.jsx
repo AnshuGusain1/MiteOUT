@@ -1,11 +1,10 @@
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.8)] z-40 flex flex-col items-center justify-center
+      className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.8)] z-30 flex flex-col items-center justify-center
                      transition-all duration-300 ease-in-out
-
                      ${
                        menuOpen
                          ? "h-screen opacity-100 pointer-events-auto"
@@ -21,8 +20,8 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         &times;
       </button>
 
-      <a
-        href="#home"
+      <Link
+        to="/"
         onClick={() => setMenuOpen(false)}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                     ${
@@ -33,9 +32,9 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             `}
       >
         Home
-      </a>
-      <a
-        href="#about"
+      </Link>
+      <Link
+        to="/Awards"
         onClick={() => setMenuOpen(false)}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
@@ -43,10 +42,10 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             }        
     `}
       >
-        About
-      </a>
-      <a
-        href="#projects"
+        Awards
+      </Link>
+      <Link
+        to="/Prototypes"
         onClick={() => setMenuOpen(false)}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
@@ -54,10 +53,10 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             }        
     `}
       >
-        Projects
-      </a>
-      <a
-        href="#contact"
+        Prototypes
+      </Link>
+      <Link
+        to="/Contact"
         onClick={() => setMenuOpen(false)}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
@@ -66,7 +65,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     `}
       >
         Contact
-      </a>
+      </Link>
     </div>
   );
 };
