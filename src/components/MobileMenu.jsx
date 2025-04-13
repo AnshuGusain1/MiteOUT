@@ -5,6 +5,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     { to: "/", label: "Home" },
     { to: "/Awards", label: "Awards" },
     { to: "/Prototypes", label: "Prototypes" },
+    { to: "/Projects", label: "Projects" },
     { to: "/Contact", label: "Contact" }
   ];
 

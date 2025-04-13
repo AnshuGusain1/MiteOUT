@@ -1,150 +1,134 @@
-import { RevealOnScroll } from "../RevealOnScroll";
-import { useState } from "react";
+import { useState } from 'react';
+import { ExternalLink, Video, Code, BookOpen } from 'lucide-react';
 
-const ProjectCard = ({ project }) => {
-  const [selectedImage, setSelectedImage] = useState(0);
-
-  return (
-    <div className="glass p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)] transition-all">
-      <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-      <p className="text-gray-400 mb-4">{project.description}</p>
-
-      {/* Image Slideshow */}
-      <div className="relative bg-gray-900/50 rounded-lg overflow-hidden mb-4 h-64">
-        <img
-          src={project.images[selectedImage]?.url || "/api/placeholder/600/300"}
-          alt={project.images[selectedImage]?.alt || project.title}
-          className="w-full h-full object-cover"
-        />
-        {project.images.length > 1 && (
-          <div className="absolute inset-0 flex justify-between items-center px-4">
-            <button
-              onClick={() =>
-                setSelectedImage((prev) =>
-                  prev === 0 ? project.images.length - 1 : prev - 1
-                )
-              }
-              className="bg-blue-500/20 text-white p-2 rounded-full hover:bg-blue-500/40 transition"
-            >
-              ←
-            </button>
-            <button
-              onClick={() =>
-                setSelectedImage((prev) =>
-                  prev === project.images.length - 1 ? 0 : prev + 1
-                )
-              }
-              className="bg-blue-500/20 text-white p-2 rounded-full hover:bg-blue-500/40 transition"
-            >
-              →
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* Thumbnail Selection */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.images.map((image, index) => (
-          <div
-            key={index}
-            className={`w-12 h-12 cursor-pointer rounded overflow-hidden border ${
-              selectedImage === index ? "border-blue-500" : "border-white/10"
-            }`}
-            onClick={() => setSelectedImage(index)}
-          >
-            <img src={image.url} alt={image.alt} className="w-full h-full object-cover" />
-          </div>
-        ))}
-      </div>
-
-      {/* Technology Tags */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.technologies.map((tech, key) => (
-          <span
-            key={key}
-            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm transition hover:bg-blue-500/20 hover:-translate-y-0.5 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-
-      {/* Links */}
-      <div className="flex justify-between items-center">
-        <a
-          href={project.link}
-          className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-        >
-          View Project →
-        </a>
-      </div>
-    </div>
-  );
-};
-
-export const Projects = () => {
+export function Projects() {
+  const [activeProject, setActiveProject] = useState(0);
+  
   const projects = [
     {
-      title: "Cloud Platform",
-      description: "Scalable cloud infrastructure management with real-time monitoring and automated scaling.",
-      technologies: ["React", "Node.js", "AWS", "Docker"],
-      link: "#",
-      images: [
-        { url: "/images/cloud1.jpg", alt: "Cloud dashboard" },
-        { url: "/images/cloud2.jpg", alt: "Resource monitoring" }
-      ]
+      id: 1,
+      title: "Dartmouth Social Blueprint Challenge",
+      description: "Feburary 2025",
+      technologies: ["React", "Node.js", "WebSockets", "Chart.js"],
+      videoLink: "https://youtu.be/3uCNxKdQ2lQ",
+      videoId: "3uCNxKdQ2lQ",
+      icon: <Code className="w-8 h-8" />
     },
     {
-      title: "AI Analytics Dashboard",
-      description: "ML-powered data visualization platform with predictive analytics and interactive reports.",
-      technologies: ["Python", "TensorFlow", "D3.js", "Flask"],
-      link: "#",
-      images: [
-        { url: "/images/analytics1.jpg", alt: "Analytics dashboard" },
-        { url: "src/images/Hult2025/IMG_5711.jpeg", alt: "Data visualization" }
-      ]
+      id: 2,
+      title: "Thomas Edison 1",
+      description: "[Video Submitted to the Thomas Edison Pitch Contest in January 2024]",
+      technologies: ["React Native", "Firebase", "Redux", "Cloud Storage"],
+      videoLink: "https://youtu.be/4Y7Bv0KtsfM",
+      videoId: "4Y7Bv0KtsfM",
+      icon: <BookOpen className="w-8 h-8" />
     },
     {
-      title: "E-Commerce Web App",
-      description: "Full-stack e-commerce with modern UI, secure payment integration, and customizable product inventory.",
-      technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-      link: "#",
-      images: [
-        { url: "src/images/Hult2025/IMG_5709.jpeg", alt: "Product showcase" },
-        { url: "src/images/Hult2025/IMG_5710.jpeg", alt: "Shopping cart" }
-      ]
+      id: 3,
+      title: "Slingshot Competition",
+      description: "A wearable-compatible application that tracks workouts, calories, and provides personalized fitness recommendations.",
+      technologies: ["React", "TypeScript", "GraphQL", "MongoDB"],
+      videoLink: "https://youtu.be/dwA-nyGQZzY",
+      videoId: "dwA-nyGQZzY",
+      icon: <Video className="w-8 h-8" />
     },
     {
-      title: "Real-Time Chat App",
-      description: "Scalable chat platform supporting real-time messaging, presence, and group chat features.",
-      technologies: ["Socket.IO", "Express", "React", "Redis"],
-      link: "#",
-      images: [
-        { url: "/images/chat1.jpg", alt: "Chat interface" },
-        { url: "/images/chat2.jpg", alt: "Group conversation" }
-      ]
+      id: 4,
+      title: "Mid-Year Presentation",
+      description: "An online platform for students to collaborate, share resources, and study together in a virtual environment.",
+      technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
+      videoLink: "https://youtu.be/ZkDPKvpKTuY",
+      videoId: "ZkDPKvpKTuY",
+      icon: <ExternalLink className="w-8 h-8" />
     }
   ];
 
+  // Function to extract YouTube ID from URL (not needed since we're hardcoding IDs now)
+  const getYoutubeId = (url) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+  };
+
   return (
-    <section
-      id="projects"
-      className="min-h-screen flex items-center justify-center py-20"
-    >
-      <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            Featured Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
+    <div className="bg-orange-50 min-h-screen p-8">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold text-orange-700 mb-8 text-center">Featured Projects</h1>
+        
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
+          {projects.map((project, index) => (
+            <div 
+              key={project.id}
+              className={`cursor-pointer p-4 rounded-lg transition-all duration-300 ${
+                activeProject === index 
+                  ? "bg-orange-400 text-white shadow-lg scale-105" 
+                  : "bg-orange-200 text-orange-800 hover:bg-orange-300"
+              }`}
+              onClick={() => setActiveProject(index)}
+            >
+              <div className="flex items-center gap-3 mb-2">
+                {project.icon}
+                <h3 className="font-semibold text-lg">{project.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="bg-tan-100 bg-amber-50 border border-orange-200 rounded-xl p-6 shadow-md">
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-bold text-orange-600 mb-4">{projects[activeProject].title}</h2>
+              <p className="text-orange-900 mb-6">{projects[activeProject].description}</p>
+              
+              <div className="mb-6">
+                <h4 className="font-medium text-orange-800 mb-2">Technologies Used:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {projects[activeProject].technologies.map((tech, i) => (
+                    <span key={i} className="bg-orange-300 text-orange-800 px-3 py-1 rounded-full text-sm">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              <a 
+                href={projects[activeProject].videoLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors"
+              >
+                <Video className="w-5 h-5" />
+                Watch Demo Video
+              </a>
+            </div>
+            
+            <div className="md:w-1/2 bg-amber-100 rounded-lg overflow-hidden flex items-center justify-center">
+              <a 
+                href={projects[activeProject].videoLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block w-full"
+              >
+                <div className="relative group">
+                  {/* YouTube thumbnail image (high quality) */}
+                  <img 
+                    src={`https://img.youtube.com/vi/${projects[activeProject].videoId}/hqdefault.jpg`}
+                    alt={`${projects[activeProject].title} YouTube thumbnail`}
+                    className="w-full h-auto rounded-lg"
+                  />
+                  
+                  {/* Play button overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-70 group-hover:opacity-90 transition-opacity">
+                    <div className="bg-orange-600 rounded-full p-4 shadow-lg">
+                      <Video className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
-      </RevealOnScroll>
-    </section>
+      </div>
+    </div>
   );
-};
-
-export default Projects;
+}
