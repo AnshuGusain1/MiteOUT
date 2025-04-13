@@ -17,7 +17,7 @@ export function Projects() {
     {
       id: 2,
       title: "Thomas Edison 1",
-      description: "[Video Submitted to the Thomas Edison Pitch Contest in January 2024]",
+      description: "Video Submitted to the Thomas Edison Pitch Contest in January 2024",
       technologies: ["React Native", "Firebase", "Redux", "Cloud Storage"],
       videoLink: "https://youtu.be/4Y7Bv0KtsfM",
       videoId: "4Y7Bv0KtsfM",
@@ -26,7 +26,7 @@ export function Projects() {
     {
       id: 3,
       title: "Slingshot Competition",
-      description: "A wearable-compatible application that tracks workouts, calories, and provides personalized fitness recommendations.",
+      description: "Video Submitted to the National Geographic Slingshot Competition in January 2024",
       technologies: ["React", "TypeScript", "GraphQL", "MongoDB"],
       videoLink: "https://youtu.be/dwA-nyGQZzY",
       videoId: "dwA-nyGQZzY",
@@ -35,7 +35,7 @@ export function Projects() {
     {
       id: 4,
       title: "Mid-Year Presentation",
-      description: "An online platform for students to collaborate, share resources, and study together in a virtual environment.",
+      description: "December 2024: Our presentation was given to summarize our project.",
       technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
       videoLink: "https://youtu.be/ZkDPKvpKTuY",
       videoId: "ZkDPKvpKTuY",
