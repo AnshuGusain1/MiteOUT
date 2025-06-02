@@ -6,10 +6,10 @@ const AboutHome = () => {
     <div className="flex flex-col md:flex-row justify-center items-center gap-8 p-6 bg-orange-300 min-h-screen text-black">
       {/* Left column - Jonah Hymes */}
       <div className="flex flex-col items-center text-center">
-        <h2 className="text-3xl font-bold italic mb-4 text-black">Jonah Hymes</h2>
-        <p className="text-xl font-semibold mb-2 text-black">CTO & Co-Founder</p>
-        <p className="mb-2 text-black">Dartmouth College 2028</p>
-        <p className="text-black">Computer Engineering & Computer Science</p>
+        <h2 className="text-3xl font-bold italic mb-4 text-black">Lucas Bell</h2>
+        <p className="text-xl font-semibold mb-2 text-black">CEO & Co-Founder</p>
+        <p className="mb-2 text-black">Rensselaer Polytechnic Institute 2028</p>
+        <p className="text-black">Mechanical Engineering</p>
       </div>
       
       {/* Middle - Photo */}
@@ -23,10 +23,10 @@ const AboutHome = () => {
       
       {/* Right column - Lucas Bell */}
       <div className="flex flex-col items-center text-center">
-        <h2 className="text-3xl font-bold italic mb-4 text-black">Lucas Bell</h2>
-        <p className="text-xl font-semibold mb-2 text-black">CEO & Co-Founder</p>
+        <h2 className="text-3xl font-bold italic mb-4 text-black">Jonah Hymes</h2>
+        <p className="text-xl font-semibold mb-2 text-black">CTO & Co-Founder</p>
         <p className="mb-2 text-black">Rensselaer Polytechnic Institute 2028</p>
-        <p className="text-black">Mechanical Engineering</p>
+        <p className="text-black">Computer Engineering and Computer Science</p>
       </div>
 
       

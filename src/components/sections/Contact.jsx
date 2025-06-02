@@ -64,7 +64,7 @@ export const Contact = () => {
                   </svg>
                   <div>
                     <p className="text-black font-medium">Website</p>
-                    <p className="text-gray-700">www.yourcompany.com</p>
+                    <p className="text-gray-700">www.miteouttech.com</p>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export const Contact = () => {
                     <span className="text-orange-700 font-medium">Email:</span> JonahHymes@gmail.com
                   </p>
                   <p className="text-gray-700">
-                    <span className="text-orange-700 font-medium">Phone:</span> ...
+                    <span className="text-orange-700 font-medium">Phone:</span> (518) 210-0594
                   </p>
                 </div>
               </div>
@@ -141,7 +141,7 @@ export const Contact = () => {
                     <span className="text-orange-700 font-medium">Email:</span> Lbell42006@gmail.com
                   </p>
                   <p className="text-gray-700">
-                    <span className="text-orange-700 font-medium">Phone:</span> ...
+                    <span className="text-orange-700 font-medium">Phone:</span> (518) 867-7449
                   </p>
                 </div>
               </div>
@@ -156,7 +156,7 @@ export const Contact = () => {
                   />
                 </div>
                 <h4 className="text-xl font-bold text-black">Hridaanshu Gusain</h4>
-                <p className="text-orange-700 mb-3">Hardware Engineer, Web Developer</p>
+                <p className="text-orange-700 mb-3">Lead Engineer</p>
                 <div className="space-y-2 text-center">
                   <p className="text-gray-700">
                     <span className="text-orange-700 font-medium">Email:</span> Hridaanshu@gmail.com
