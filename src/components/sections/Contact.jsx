@@ -2,6 +2,7 @@ import { RevealOnScroll } from "../RevealOnScroll";
 
 import LucasHeadshot from "../../assets/Lucas_Headshot.png";
 import JonahHeadshot from "../../assets/Jonah_Headshot.png";
+import PlaceholderHeadshot from "../../assets/AnshuHeadshot.png";
 
 export const Contact = () => {
   return (
@@ -90,15 +91,23 @@ export const Contact = () => {
           </div>
           
           {/* Founders Information */}
-          <div className="mb-8 max-w-7xl mx-auto">
+          <div
+            className="mb-8 max-w-7xl mx-auto"
+            style={{
+              backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpolygon points='20,0 40,10 40,30 20,40 0,30 0,10' stroke='%23FBBF24' fill='none' stroke-width='1'/%3E%3C/svg%3E\")",
+              backgroundRepeat: "repeat",
+              backgroundSize: "40px 40px",
+              padding: "2rem"
+            }}
+          >
             <h3 className="text-2xl font-bold mb-6 text-black text-center">Meet Our Founders</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Founder 1 */}
-              <div className="bg-orange-200 rounded-lg shadow-md p-6 flex flex-col items-center">
+              <div className="bg-orange-200 rounded-lg shadow-md p-6 flex flex-col items-center md:col-start-1">
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4 border-2 border-orange-500">
                   <img 
                     src={JonahHeadshot} 
-                    style={{ marginTop: '-80px' }}
+                    style={{ marginTop: '-80px', transform: 'scale(1.1)' }}
                     alt="Jonah Hymes" 
                     className="w-80 h-80 object-cover rounded-full justify-center py-20"
                   />
@@ -116,11 +125,11 @@ export const Contact = () => {
               </div>
               
               {/* Founder 2 */}
-              <div className="bg-orange-200 rounded-lg shadow-md p-6 flex flex-col items-center">
+              <div className="bg-orange-200 rounded-lg shadow-md p-6 flex flex-col items-center md:col-start-3">
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4 border-2 border-orange-500">
                   <img 
                     src={LucasHeadshot} 
-                    style={{ marginTop: '-80px' }}
+                    style={{ marginTop: '-80px', transform: 'scale(1.1)' }}
                     alt="Lucas Bell" 
                     className="w-80 h-80 object-cover rounded-full justify-center py-20"
                   />
@@ -133,6 +142,27 @@ export const Contact = () => {
                   </p>
                   <p className="text-gray-700">
                     <span className="text-orange-700 font-medium">Phone:</span> ...
+                  </p>
+                </div>
+              </div>
+              {/* Founder 3 - Placeholder */}
+              <div className="bg-orange-200 rounded-lg shadow-md p-6 flex flex-col items-center md:col-start-2">
+                <div className="w-40 h-40 rounded-full overflow-hidden mb-4 border-2 border-orange-500">
+                  <img
+                    src={PlaceholderHeadshot}
+                    style={{ marginTop: '-73px', transform: 'scale(1.1)' }}
+                    alt="Placeholder Founder"
+                    className="w-80 h-80 object-cover rounded-full justify-center py-20"
+                  />
+                </div>
+                <h4 className="text-xl font-bold text-black">Hridaanshu Gusain</h4>
+                <p className="text-orange-700 mb-3">Hardware Engineer, Web Developer</p>
+                <div className="space-y-2 text-center">
+                  <p className="text-gray-700">
+                    <span className="text-orange-700 font-medium">Email:</span> hridaanshu@gmail.com.com
+                  </p>
+                  <p className="text-gray-700">
+                    <span className="text-orange-700 font-medium">Phone:</span> (518) 867-7099
                   </p>
                 </div>
               </div>
