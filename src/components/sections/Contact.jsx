@@ -45,6 +45,7 @@ export const Contact = () => {
                     <p className="text-black font-medium">Phone</p>
                     <p className="text-gray-700">(518) 210-0594 - Jonah H.</p>
                     <p className="text-gray-700">(518) 867-7449 - Lucas B.</p>
+                    <p className="text-gray-700">(518) 867-7099 - Hridaanshu G.</p>
                   </div>
                 </div>
                 
