@@ -25,7 +25,7 @@ const AboutHome = () => {
       <div className="flex flex-col items-center text-center">
         <h2 className="text-3xl font-bold italic mb-4 text-black">Jonah Hymes</h2>
         <p className="text-xl font-semibold mb-2 text-black">CTO & Co-Founder</p>
-        <p className="mb-2 text-black">Rensselaer Polytechnic Institute 2028</p>
+        <p className="mb-2 text-black">Dartmouth College</p>
         <p className="text-black">Computer Engineering and Computer Science</p>
       </div>
 
