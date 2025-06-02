@@ -159,7 +159,7 @@ export const Contact = () => {
                 <p className="text-orange-700 mb-3">Hardware Engineer, Web Developer</p>
                 <div className="space-y-2 text-center">
                   <p className="text-gray-700">
-                    <span className="text-orange-700 font-medium">Email:</span> hridaanshu@gmail.com.com
+                    <span className="text-orange-700 font-medium">Email:</span> Hridaanshu@gmail.com.com
                   </p>
                   <p className="text-gray-700">
                     <span className="text-orange-700 font-medium">Phone:</span> (518) 867-7099
