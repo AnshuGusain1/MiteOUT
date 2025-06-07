@@ -88,9 +88,11 @@ export function Home() {
         </div>
       </section>
 
-      <section id="prototype" className="relative w-screen h-screen bg-white">
-  <ModelViewer />
-</section>
+      <section id="prototype" className="relative w-full py-16 bg-green-50 flex justify-center items-center">
+        <div className="w-4/5 max-w-4xl h-96 bg-white rounded-2xl shadow-lg overflow-hidden">
+          <ModelViewer />
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-green-900 text-green-200 py-8">

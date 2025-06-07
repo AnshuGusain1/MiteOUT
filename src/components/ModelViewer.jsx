@@ -8,7 +8,6 @@ import modelUrl from '../assets/MiteOutModel.gltf?url';
 function ExplodingModel() {
   // Use the imported URL
   const gltf = useGLTF(modelUrl);
-  console.log(gltf);
   const group = useRef();
   const { scrollYProgress } = useScroll();
 
@@ -22,10 +21,11 @@ function ExplodingModel() {
     if (gltf.nodes.Part2) gltf.nodes.Part2.position.y = -t * 2;
     if (gltf.nodes.Part3) gltf.nodes.Part3.position.z = t * 2;
     // Add more parts based on your model
+
   });
 
   return (
-    <group ref={group}>
+    <group ref={group} rotation={[-Math.PI / 6, Math.PI / 4, 0]} position={[0, -0.5, 0]} scale={[3.5, 3.5, 3.5]}>
       <primitive object={gltf.scene} />
     </group>
   );
@@ -33,12 +33,12 @@ function ExplodingModel() {
 
 export default function ModelViewer() {
   return (
-    <div className="w-full h-[100vh]" id="model-section">
-      <Canvas camera={{ position: [0, 0, 5] }}>
+    <div className="w-full h-full" id="model-section">
+      <Canvas camera={{ position: [0, 0, 3], fov: 30}}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[0, 5, 5]} />
         <ExplodingModel />
-        <OrbitControls />
+        <OrbitControls target={[0, 0, 0]} />
       </Canvas>
     </div>
   );
