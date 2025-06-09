@@ -5,8 +5,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  background: #f2b03bff;
-  color: #f2b03bff;
+  background: white;
+  color: green;
+  position: relative;
+  top: 0;
 }
 
 @layer utilities {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BeehiveImage from "../../assets/Hive.png";
 import HomeBackground from "../../assets/HomeBackground.png";
+import Header from '../Header';
 
 export const Prototypes = () => {
   const slides = [
@@ -76,7 +77,8 @@ export const Prototypes = () => {
   };
 
   return (
-    <div className="min-h-screen bg-amber-50">
+    <div className="min-h-screen bg-green-50">
+      <Header />
       <div 
         className="h-64 w-full bg-cover bg-center flex items-center justify-center"
         style={{
@@ -85,23 +87,23 @@ export const Prototypes = () => {
           position: "relative"
         }}
       >
-        <div className="absolute inset-0 bg-orange-300 bg-opacity-40"></div>
+        <div className="absolute inset-0 bg-green-800 bg-opacity-40"></div>
         <h1 className="text-4xl font-bold text-white relative z-10">Our Prototypes</h1>
       </div>
       
       {/* Slide Content */}
-      <div className="w-full bg-amber-50 py-8">
+      <div className="w-full bg-green-50 py-8">
         <div className="max-w-6xl mx-auto">
           {renderSlideContent(slides[currentSlide])}
           
           {/* Horizontal Divider */}
-          <div className="w-full max-w-3xl mx-auto border-t border-orange-300 my-8"></div>
+          <div className="w-full max-w-3xl mx-auto border-t border-green-200 my-8"></div>
           
           {/* Navigation - Hidden in the screenshot but keeping for functionality */}
           <div className="flex justify-between max-w-3xl mx-auto px-4 hidden">
             <button 
               onClick={previousSlide}
-              className="bg-amber-500 hover:bg-amber-600 text-black px-4 py-2 rounded"
+              className="bg-green-800 hover:bg-green-700 text-white px-4 py-2 rounded"
             >
               Previous
             </button>
@@ -112,7 +114,7 @@ export const Prototypes = () => {
             
             <button 
               onClick={nextSlide}
-              className="bg-amber-500 hover:bg-amber-600 text-black px-4 py-2 rounded"
+              className="bg-green-800 hover:bg-green-700 text-white px-4 py-2 rounded"
             >
               Next
             </button>
@@ -121,7 +123,7 @@ export const Prototypes = () => {
       </div>
       
       {/* Contact Footer */}
-      <div className="w-full bg-orange-300 py-4 text-center text-sm text-black">
+      <div className="w-full bg-green-800 py-4 text-center text-sm text-white">
         Contact Us: MiteOutTech@gmail.com
       </div>
     </div>

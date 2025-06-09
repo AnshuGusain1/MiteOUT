@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from "react";
 import "./App.css";
-import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
 import { Home } from "./components/sections/Home";
 import { Prototypes } from "./components/sections/Prototypes";
@@ -17,7 +16,6 @@ function App() {
   return (
     <Router basename={import.meta.env.VITE_BASE_PATH || '/MiteOUT'}>
       <div className="min-h-screen bg-black text-gray-100">
-        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Routes>
           <Route path="/" element={<Home />} />

@@ -1,23 +1,14 @@
 import React from 'react';
 import { Leaf, Zap, Microscope, Users } from 'lucide-react';
 import ModelViewer from '../ModelViewer';
+import Header from '../Header';
 
 // Provide both a named and default export so importing { Home } or default works.
 export function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-green-50 text-gray-900">
       {/* Header */}
-      <header className="bg-white shadow">
-        <div className="container mx-auto flex items-center justify-between p-6">
-          <h1 className="text-2xl font-bold text-green-800">MiteOUT</h1>
-          <nav className="space-x-6 text-gray-600">
-            <a href="#features" className="hover:text-green-800">Features</a>
-            <a href="#about" className="hover:text-green-800">About</a>
-            <a href="/survey" className="hover:text-green-800">Survey</a>
-          </nav>
-        </div>
-      </header>
-
+      <Header />
       {/* Hero Section */}
       <section className="flex-1 flex flex-col justify-center items-center text-center px-6 py-20">
         <h2 className="text-5xl font-extrabold mb-4 text-green-900">
@@ -28,7 +19,7 @@ export function Home() {
           manage, and protect their colonies against harmful mites. Join us in creating a future where every hive thrives.
         </p>
         <a
-          href="/survey"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdqIWtBXgvfK5kVzCWQZ9jxMkOo34t0J40GGhUf6xwqIiAlrg/viewform?embedded=true"
           className="inline-block bg-green-800 text-white py-3 px-8 rounded-full font-medium hover:bg-green-700 transition"
         >
           Take Our Quick Survey
@@ -103,7 +94,8 @@ export function Home() {
           <nav className="space-x-4">
             <a href="#features" className="hover:text-white">Features</a>
             <a href="#about" className="hover:text-white">About</a>
-            <a href="/survey" className="hover:text-white">Survey</a>
+            <a href="MiteOut/contact" className="hover:text-white">Contact</a>
+            <a href="/prototypes" classname = "hover:text-white">Prototypes</a>
           </nav>
         </div>
       </footer>
