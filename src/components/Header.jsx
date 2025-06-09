@@ -8,8 +8,8 @@ const Header = () => (
       <nav className="space-x-6 text-gray-600">
         <a href="/MiteOUT" className="hover:text-green-800">Features</a>
         <a href="#about" className="hover:text-green-800">About</a>
-        <a href="/MiteOUT/contact" className="hover:text-green-800">Contact</a>
-        <a href="/MiteOUT/prototypes" className="hover:text-green">Prototypes</a>
+        <a href="/contact" className="hover:text-green-800">Contact</a>
+        <a href="/prototypes" className="hover:text-green">Prototypes</a>
       </nav>
     </div>
   </header>
