@@ -16,7 +16,7 @@ export default function ModelViewer({ modelUrl }){
     <Canvas dpr={[1,2]} shadows camera={{ fov: 45 }}>
       <ambientLight intensity={0.6} />
       <directionalLight position={[10, 10, 5]} intensity={0.5} />
-      <color attach="background" args={["#101010"]} />
+      <color attach="background" args={["#166534"]} />
       <PresentationControls speed={1.5} global zoom={.2} polar={[-Math.PI, Math.PI]}>
         <Stage environment="city" intensity={0.1}>
           <Model modelUrl={modelUrl || model1Url} scale={0.01} />
