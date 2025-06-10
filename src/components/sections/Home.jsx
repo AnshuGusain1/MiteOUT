@@ -72,10 +72,7 @@ export function Home() {
             What began as a simple school assignment quickly pivoted into the culmination of our
             passions. We wanted to transcend engineering competitions by creating a real-world solution
             for beekeepers. MiteOut is more than just a tool—it's a partnership built on continuous feedback
-            from the community. Help us refine our technology by{' '}
-            <a href="/survey" className="text-green-800 underline hover:text-green-600">
-              filling out our quick survey
-            </a>.
+            from the community.{' '}
           </p>
         </div>
       </section>
