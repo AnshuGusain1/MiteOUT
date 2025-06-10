@@ -2,6 +2,7 @@ import React from 'react';
 import { Leaf, Zap, Microscope, Users } from 'lucide-react';
 import ModelViewer from '../ModelViewer';
 import Header from '../Header';
+import model2Url from '../../assets/Part2.gltf?url';
 
 // Provide both a named and default export so importing { Home } or default works.
 export function Home() {
@@ -15,7 +16,7 @@ export function Home() {
           Precision Beekeeping<br />for Healthier Hives
         </h2>
         <p className="max-w-2xl text-gray-700 mb-8">
-          Combining cutting-edge technology with the rhythms of nature, MiteOUT empowers beekeepers to monitor,
+          Combining cutting-edge technology with the rhythms of nature, MiteOut empowers beekeepers to monitor,
           manage, and protect their colonies against harmful mites. Join us in creating a future where every hive thrives.
         </p>
         <a
@@ -70,7 +71,7 @@ export function Home() {
           <p className="text-gray-700 leading-relaxed">
             What began as a simple school assignment quickly pivoted into the culmination of our
             passions. We wanted to transcend engineering competitions by creating a real-world solution
-            for beekeepers. MiteOUT is more than just a tool—it's a partnership built on continuous feedback
+            for beekeepers. MiteOut is more than just a tool—it's a partnership built on continuous feedback
             from the community. Help us refine our technology by{' '}
             <a href="/survey" className="text-green-800 underline hover:text-green-600">
               filling out our quick survey
@@ -80,8 +81,13 @@ export function Home() {
       </section>
 
       <section id="prototype" className="relative w-full py-16 bg-green-50 flex justify-center items-center">
-        <div className="w-4/5 max-w-4xl h-96 bg-white rounded-2xl shadow-lg overflow-hidden">
-          <ModelViewer />
+        <div className="w-4/5 max-w-6xl flex flex-col md:flex-row gap-8 justify-center items-center">
+          <div className="flex-1 h-96 bg-white rounded-2xl shadow-lg overflow-hidden flex items-center justify-center">
+            <ModelViewer />
+          </div>
+          <div className="flex-1 h-96 bg-white rounded-2xl shadow-lg overflow-hidden flex items-center justify-center">
+            <ModelViewer modelUrl={model2Url} />
+          </div>
         </div>
       </section>
 
@@ -89,7 +95,7 @@ export function Home() {
       <footer className="bg-green-900 text-green-200 py-8">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            © {new Date().getFullYear()} MiteOUT. Built with passion for bees and beekeepers.
+            © {new Date().getFullYear()} MiteOut. Built with passion for bees and beekeepers.
           </div>
           <nav className="space-x-4">
             <a href="#features" className="hover:text-white">Features</a>

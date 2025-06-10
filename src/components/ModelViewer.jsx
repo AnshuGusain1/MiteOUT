@@ -1,45 +1,27 @@
 import React, { useRef } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useGLTF, OrbitControls } from '@react-three/drei';
-import { useScroll, useSpring } from '@react-spring/web';
-// Import the model as a URL from assets folder
-import modelUrl from '../assets/MiteOutModel.gltf?url';
+import { Canvas } from '@react-three/fiber';
+import { useGLTF, OrbitControls, DragControls, PresentationControls, Stage } from '@react-three/drei';
+import { useThree } from '@react-three/fiber';
 
-function ExplodingModel() {
-  // Use the imported URL
-  const gltf = useGLTF(modelUrl);
-  const group = useRef();
-  const { scrollYProgress } = useScroll();
+import model1Url from '../assets/Part1.gltf?url';
+import model2Url from '../assets/Part2.gltf?url';
 
-  useFrame(() => {
-    if (!group.current) return;
-
-    const t = scrollYProgress.get(); // Range: 0 to 1
-    
-    // Add safety checks for node existence
-    if (gltf.nodes.Part1) gltf.nodes.Part1.position.x = t * 2;
-    if (gltf.nodes.Part2) gltf.nodes.Part2.position.y = -t * 2;
-    if (gltf.nodes.Part3) gltf.nodes.Part3.position.z = t * 2;
-    // Add more parts based on your model
-
-  });
-
-  return (
-    <group ref={group} rotation={[-Math.PI / 6, Math.PI / 4, 0]} position={[0, -0.5, 0]} scale={[3.5, 3.5, 3.5]}>
-      <primitive object={gltf.scene} />
-    </group>
-  );
+function Model({ modelUrl, ...props }){
+  const { scene } = useGLTF(modelUrl);
+  return <primitive object={scene} {...props} />;
 }
 
-export default function ModelViewer() {
+export default function ModelViewer({ modelUrl }){
   return (
-    <div className="w-full h-full" id="model-section">
-      <Canvas camera={{ position: [0, 0, 3], fov: 30}}>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[0, 5, 5]} />
-        <ExplodingModel />
-        <OrbitControls target={[0, 0, 0]} />
-      </Canvas>
-    </div>
+    <Canvas dpr={[1,2]} shadows camera={{ fov: 45 }}>
+      <ambientLight intensity={0.6} />
+      <directionalLight position={[10, 10, 5]} intensity={0.5} />
+      <color attach="background" args={["#101010"]} />
+      <PresentationControls speed={1.5} global zoom={.2} polar={[-Math.PI, Math.PI]}>
+        <Stage environment="city" intensity={0.1}>
+          <Model modelUrl={modelUrl || model1Url} scale={0.01} />
+        </Stage>
+      </PresentationControls>
+    </Canvas>
   );
 }
