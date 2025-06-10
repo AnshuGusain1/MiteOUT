@@ -97,7 +97,7 @@ export function Home() {
           <nav className="space-x-4">
             <a href="#features" className="hover:text-white">Features</a>
             <a href="#about" className="hover:text-white">About</a>
-            <a href="MiteOut/contact" className="hover:text-white">Contact</a>
+            <a href="/contact" className="hover:text-white">Contact</a>
             <a href="/prototypes" classname = "hover:text-white">Prototypes</a>
           </nav>
         </div>
