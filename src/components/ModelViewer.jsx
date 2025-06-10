@@ -1,10 +1,8 @@
 import React, { useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useGLTF, OrbitControls, DragControls, PresentationControls, Stage } from '@react-three/drei';
-import { useThree } from '@react-three/fiber';
 
 import model1Url from '../assets/Part1.gltf?url';
-import model2Url from '../assets/Part2.gltf?url';
 
 function Model({ modelUrl, ...props }){
   const { scene } = useGLTF(modelUrl);
@@ -18,7 +16,7 @@ export default function ModelViewer({ modelUrl }){
       <directionalLight position={[10, 10, 5]} intensity={0.5} />
       <color attach="background" args={["#166534"]} />
       <PresentationControls speed={1.5} global zoom={.2} polar={[-Math.PI, Math.PI]}>
-        <Stage environment="city" intensity={0.1}>
+        <Stage environment="city" intensity={0.1} preserveColor>
           <Model modelUrl={modelUrl || model1Url} scale={0.01} />
         </Stage>
       </PresentationControls>

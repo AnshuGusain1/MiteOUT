@@ -2,7 +2,7 @@ import React from 'react';
 import { Leaf, Zap, Microscope, Users } from 'lucide-react';
 import ModelViewer from '../ModelViewer';
 import Header from '../Header';
-import model2Url from '../../assets/Part2.gltf?url';
+import model2Url from '../../assets/PCB.gltf?url';
 
 // Provide both a named and default export so importing { Home } or default works.
 export function Home() {
