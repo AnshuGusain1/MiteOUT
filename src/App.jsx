@@ -19,7 +19,7 @@ function App() {
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Prototypes" element={<Prototypes />} />
+          <Route path="/Prototypes" element={<Products />} />
           <Route path="/Projects" element={<Projects />} />
           <Route path="/Awards" element={<Awards />} />
           <Route path="/contact" element={<Contact />} />
