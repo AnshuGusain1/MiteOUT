@@ -9,6 +9,7 @@ import { Awards } from "./components/sections/Awards";
 import "./index.css";
 import { Contact } from "./components/sections/Contact";
 import { Analytics } from "@vercel/analytics/react"
+import { Helmet } from "react-helmet";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,6 +17,11 @@ function App() {
   return (
     <Router basename={import.meta.env.VITE_BASE_PATH || '/MiteOUT'}>
       <div className="min-h-screen bg-black text-gray-100">
+        <Helmet>
+          <title>MiteOUT – Precision Beekeeping Solutions</title>
+          <meta name="description" content="MiteOUT delivers real-time hive monitoring and alerts, empowering beekeepers to protect and optimize their hives." />
+          <link rel="canonical" href="https://www.miteouttech.com/" />
+        </Helmet>
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Routes>
           <Route path="/" element={<Home />} />

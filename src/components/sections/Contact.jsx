@@ -11,8 +11,10 @@ export const Contact = () => {
       <Header />
       <section
         id="contact"
-        className="min-h-screen bg-green-50 py-20 relative"
-        style={{ 
+        className="min-h-screen py-20 relative"
+        style={{
+          backgroundColor: '#F0FDF4', // Equivalent to bg-green-50
+          backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(209 250 229 / 0.4)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
           width: "100vw",
           marginLeft: "calc(-50vw + 50%)"
         }}
@@ -96,12 +98,10 @@ export const Contact = () => {
             
             {/* Founders Information */}
             <div
-              className="mb-8 max-w-7xl mx-auto"
+              className="mb-8 max-w-7xl mx-auto p-8 rounded-lg"
               style={{
-                backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Cpolygon points=\'20,0 40,10 40,30 20,40 0,30 0,10\' stroke=\'%2310B981\' fill=\'none\' stroke-width=\'1\'/%3E%3C/svg%3E')",
-                backgroundRepeat: "repeat",
-                backgroundSize: "40px 40px",
-                padding: "2rem"
+                backgroundColor: 'rgba(220, 252, 231, 0.5)',
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239AE6B4' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
               }}
             >
               <h3 className="text-2xl font-bold mb-6 text-green-900 text-center">Meet Our Founders</h3>
@@ -117,7 +117,7 @@ export const Contact = () => {
                     />
                   </div>
                   <h4 className="text-xl font-bold text-green-900">Jonah Hymes</h4>
-                  <p className="text-green-700 mb-3">CTO</p>
+                  <p className="text-green-700 mb-3">COO</p>
                   <div className="space-y-2 text-center">
                     <p className="text-gray-700">
                       <span className="text-green-700 font-medium">Email:</span> JonahHymes@gmail.com
