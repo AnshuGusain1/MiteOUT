@@ -3,6 +3,7 @@ import { Leaf, Zap, Microscope, Users, Clock, Thermometer, Wifi, Database, Sun, 
 import ModelViewer from '../ModelViewer';
 import Header from '../Header';
 import model2Url from '../../assets/PCB.gltf?url';
+import Deployment from "../../assets/Deployment.jpeg";
 
 // Provide both a named and default export so importing { Home } or default works.
 export function Home() {
@@ -15,7 +16,7 @@ export function Home() {
         <h2 className="text-5xl font-extrabold mb-4 text-green-900">
           An Autonomous Solution to Varroa Mites
         </h2>
-        <img src="MiteOUT/src/assets/Deployment.jpeg" alt="Deployment" className="w-full max-w-md mb-6 rounded-lg shadow-md" />
+        <img src={Deployment} alt="Deployment" className="w-full max-w-md mb-6 rounded-lg shadow-md" />
         <p className="max-w-2xl text-gray-700 mb-8">
           Our pollinators are dying at an alarming rate, with honeybee mortality reaching over 50% in recent years. The
           main culprit? The Varroa destructor mite. MiteOut offers a retrofittable device that provides fully
